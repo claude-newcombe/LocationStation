@@ -1,0 +1,9 @@
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\bin\Debug\netstandard2.0\LocationStationDataAccessLibrary.deps.json
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\bin\Debug\netstandard2.0\LocationStationDataAccessLibrary.dll
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\obj\Debug\netstandard2.0\LocationStationDataAccessLibrary.csprojAssemblyReference.cache
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\obj\Debug\netstandard2.0\LocationStationDataAccessLibrary.AssemblyInfoInputs.cache
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\obj\Debug\netstandard2.0\LocationStationDataAccessLibrary.AssemblyInfo.cs
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\bin\Debug\netstandard2.0\LocationStationDataAccessLibrary.pdb
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\obj\Debug\netstandard2.0\LocationStationDataAccessLibrary.csproj.CoreCompileInputs.cache
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\obj\Debug\netstandard2.0\LocationStationDataAccessLibrary.dll
+C:\Users\claud\Documents\Computing\NETprojects\LocationStation\LocationStationDataAccessLibrary\obj\Debug\netstandard2.0\LocationStationDataAccessLibrary.pdb
