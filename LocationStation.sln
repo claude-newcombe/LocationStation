@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationStationAPI", "LocationStationAPI\LocationStationAPI.csproj", "{980FA828-C0FF-4FB8-A64D-5B14DEEE8D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationStationDataAccessLibrary", "LocationStationDataAccessLibrary\LocationStationDataAccessLibrary.csproj", "{B44A99C5-F19F-498B-BBBF-3C9B896A5301}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{980FA828-C0FF-4FB8-A64D-5B14DEEE8D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{980FA828-C0FF-4FB8-A64D-5B14DEEE8D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{980FA828-C0FF-4FB8-A64D-5B14DEEE8D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{980FA828-C0FF-4FB8-A64D-5B14DEEE8D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B44A99C5-F19F-498B-BBBF-3C9B896A5301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B44A99C5-F19F-498B-BBBF-3C9B896A5301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B44A99C5-F19F-498B-BBBF-3C9B896A5301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B44A99C5-F19F-498B-BBBF-3C9B896A5301}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E3EF68C-C339-48F7-A2F8-370ABC7DF4A7}
+	EndGlobalSection
+EndGlobal
