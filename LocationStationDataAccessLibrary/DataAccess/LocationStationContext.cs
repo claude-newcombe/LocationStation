@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LocationStationDataAccessLibrary.LocationStationContext
+namespace LocationStationDataAccessLibrary.DataAccess
 {
     public class LocationStationContext : DbContext
     {
