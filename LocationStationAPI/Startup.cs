@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LocationStationAPI.Repository;
 using LocationStationDataAccessLibrary.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,7 +32,10 @@ namespace LocationStationAPI
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
+
             services.AddControllers();
+
+            services.AddScoped<IMusicRepository, MusicRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
