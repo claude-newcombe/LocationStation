@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using LocationStationAPI.Repository;
 using LocationStationDataAccessLibrary.Models;
@@ -19,13 +20,33 @@ namespace LocationStationAPI.Controllers
         {
             _repository = repository;
         }
+
         [HttpGet]
         public ActionResult<IEnumerable<MusicItem>> GetMusicItems()
         {
             var MusicItems = _repository.GetMusicItems();
-
             return Ok(MusicItems);
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<MusicItem> GetMusicItem(int id)
+        {
+            var MusicItem = _repository.GetMusicItem(id);
+            return Ok(MusicItem); //safety net for if id doesn't return anything
+        }
+
+        [HttpPost]
+        public ActionResult<MusicItem> PostMusicItem(MusicItem musicItem)
+        {
+            var addedItem = _repository.AddMusicItem(musicItem);
+            return Ok(addedItem);
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult<MusicItem> DeleteMusicItem(int id)
+        {
+            var deletedItem = _repository.DeleteMusicItem(id);
+            return Ok(deletedItem);
+        }
     }
 }

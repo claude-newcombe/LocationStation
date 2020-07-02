@@ -9,5 +9,13 @@ namespace LocationStationAPI.Repository
     public interface IMusicRepository
     {
         IEnumerable<MusicItem> GetMusicItems();
+
+        MusicItem GetMusicItem(int id);
+
+        MusicItem AddMusicItem(MusicItem musicItem);
+
+        MusicItem DeleteMusicItem(int id);
+
+
     }
 }
