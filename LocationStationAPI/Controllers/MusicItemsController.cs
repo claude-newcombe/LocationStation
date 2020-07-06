@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using LocationStationAPI.Repository;
 using LocationStationDataAccessLibrary.Models;
@@ -33,6 +34,13 @@ namespace LocationStationAPI.Controllers
         {
             var MusicItem = _repository.GetMusicItem(id);
             return Ok(MusicItem); //safety net for if id doesn't return anything
+        }
+
+        [HttpGet("{longitude}/{latitude}")]
+        public ActionResult<MusicItem> GetNearestMusicItem(float longitude, float latitude)
+        {
+            var nearestMusicItem = _repository.GetClosestMusicItem(longitude, latitude);
+            return nearestMusicItem;
         }
 
         [HttpPost]

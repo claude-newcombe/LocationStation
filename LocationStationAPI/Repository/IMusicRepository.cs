@@ -8,7 +8,7 @@ namespace LocationStationAPI.Repository
 {
     public interface IMusicRepository
     {
-        IEnumerable<MusicItem> GetMusicItems();
+        IList<MusicItem> GetMusicItems();
 
         MusicItem GetMusicItem(int id);
 
@@ -16,6 +16,7 @@ namespace LocationStationAPI.Repository
 
         MusicItem DeleteMusicItem(int id);
 
+        MusicItem GetClosestMusicItem(float Latitude, float Longitude);
 
     }
 }
