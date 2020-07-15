@@ -6,11 +6,11 @@
 
 <div class="text-center">
     <div class="row">
-        <button id="locationButton" type="button" class="btn btn-default" onclick="getLocation()">Show my location</button>
+        <button id="locationButton" type="button" class="btn btn-default" onclick="getLocation()">Please click here to consent to this page using your location data</button>
     </div>
     <form method="post">
-        <input type="text" asp-for="Location.Longitude" id="longitude" />
-        <input type="text" asp-for="Location.Latitude" id="latitude" />
+        <input type="hidden" asp-for="Location.Longitude" id="longitude" />
+        <input type="hidden" asp-for="Location.Latitude" id="latitude" />
         <button type="submit">Play</button>
     </form>
 </div>
