@@ -5,6 +5,29 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row">
+        <button id="locationButton" type="button" class="btn btn-default" onclick="getLocation()">Show my location</button>
+    </div>
+    <form method="post">
+        <input type="text" asp-for="Location.Longitude" id="longitude" />
+        <input type="text" asp-for="Location.Latitude" id="latitude" />
+        <button type="submit">Play</button>
+    </form>
 </div>
+
+
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        document.getElementById("longitude").value = position.coords.longitude;
+        document.getElementById("latitude").value = position.coords.latitude;
+
+    }
+</script>
