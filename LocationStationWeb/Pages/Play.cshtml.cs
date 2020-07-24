@@ -50,5 +50,14 @@ namespace LocationStationWeb.Pages
                 ResponseString = "Failure";
             }
         }
+
+        public IActionResult OnPost()
+        {
+            if (ModelState.IsValid == false)
+            {
+                return Page();
+            }
+            return RedirectToPage("Play", Location);
+        }
     }
 }

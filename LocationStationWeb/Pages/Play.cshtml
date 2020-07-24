@@ -4,14 +4,40 @@
     ViewData["Title"] = "Play";
 }
 
-<h1>Play</h1>
-<div class="text-center">
-    <p>Longitude = @Model.Location.Longitude</p>
-    <p>Latitude = @Model.Location.Latitude</p>
-</div>
+<h1>@Model.MusicItem.Artist - @Model.MusicItem.SongName</h1>
 
 <div class="text-center">
     @*<p>@Model.ResponseString</p>*@
-    <p>@Model.MusicItem.YouTubeLink</p>
+    <p>@Model.MusicItem.Metadata</p>
 </div>
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="@Model.MusicItem.YouTubeLink?autoplay=1" allowfullscreen allow='autoplay'></iframe>
+</div>
+
+<div class="text-center">
+    <form method="post">
+        <input type="hidden" asp-for="Location.Longitude" id="longitude" />
+        <input type="hidden" asp-for="Location.Latitude" id="latitude" />
+        <button type="submit" onclick="getLocation()">Next</button>
+    </form>
+</div>
+
+
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        document.getElementById("longitude").value = position.coords.longitude;
+        document.getElementById("latitude").value = position.coords.latitude;
+
+    }
+</script>
+
 
