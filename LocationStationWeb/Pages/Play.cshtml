@@ -3,25 +3,40 @@
 @{
     ViewData["Title"] = "Play";
 }
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="text-center">
+                    <form method="post">
+                        <input type="hidden" asp-for="Location.Longitude" id="longitude" />
+                        <input type="hidden" asp-for="Location.Latitude" id="latitude" />
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="getLocation()">Next</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="embed-responsive embed-responsive-16by9" style="height:auto">
+                    <iframe class="embed-responsive-item" src="@Model.MusicItem.YouTubeLink?autoplay=1" allowfullscreen allow='autoplay'></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card border-primary mb-3" @*style="max-width: 20rem;"*@>
+                    <div class="card-header">@Model.MusicItem.Artist</div>
+                    <div class="card-body">
+                        <h4 class="card-title"> @Model.MusicItem.SongName</h4>
+                        <p class="card-text">@Model.MusicItem.Metadata</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<h1>@Model.MusicItem.Artist - @Model.MusicItem.SongName</h1>
 
-<div class="text-center">
-    @*<p>@Model.ResponseString</p>*@
-    <p>@Model.MusicItem.Metadata</p>
-</div>
 
-<div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="@Model.MusicItem.YouTubeLink?autoplay=1" allowfullscreen allow='autoplay'></iframe>
-</div>
-
-<div class="text-center">
-    <form method="post">
-        <input type="hidden" asp-for="Location.Longitude" id="longitude" />
-        <input type="hidden" asp-for="Location.Latitude" id="latitude" />
-        <button type="submit" onclick="getLocation()">Next</button>
-    </form>
-</div>
 
 
 <script>
