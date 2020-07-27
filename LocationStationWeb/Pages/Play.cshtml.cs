@@ -31,7 +31,7 @@ namespace LocationStationWeb.Pages
         public MusicItem MusicItem { get; set; }
         public async Task OnGet()
         {
-            var requestString = "https://localhost:44335/api/MusicItems/" + Location.Longitude + "/" + Location.Latitude;
+            var requestString = "https://localhost:44335/api/MusicItems/" + Location.Latitude + "/" + Location.Longitude;
             var request = new HttpRequestMessage(HttpMethod.Get, requestString);
             var client = _clientFactory.CreateClient();
             var response = await client.SendAsync(request);
