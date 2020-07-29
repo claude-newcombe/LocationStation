@@ -47,13 +47,29 @@ namespace LocationStationAPI.Repository
 
         public MusicItem GetClosestMusicItem(float Latitude, float Longitude)
         {
-            var musicItemslist = GetMusicItems();
+            var musicItemslist = GetNearbyMusicItems(Latitude,Longitude);
             var musicDistances = CreateDistanceDictionary(musicItemslist, Latitude, Longitude);
             var sortedDistances = SortByDistance(musicDistances);
             var key = sortedDistances.FirstOrDefault().Key;
             var closestMusicItem = musicItemslist.FirstOrDefault(x => x.Id == key);
 
             return closestMusicItem;
+        }
+
+        public IList<MusicItem> GetNearbyMusicItems(float latitude, float longitude)
+        {
+            var unfilteredList = GetMusicItems();
+            var searchRadius = 0.1;
+            IList<MusicItem> filteredList = new List<MusicItem>();
+            while (filteredList.Count == 0) { 
+            filteredList = unfilteredList
+                .Where(x => x.Latitude > (latitude - searchRadius) &&
+                            x.Latitude < (latitude + searchRadius) &&
+                            x.Longitude > (longitude- searchRadius) &&
+                            x.Longitude < (longitude + searchRadius)).ToList();
+                searchRadius += 0.1;
+            }
+            return filteredList;
         }
 
         public IDictionary<int, double> CreateDistanceDictionary(IList<MusicItem> items, float latitude, float longitude)
