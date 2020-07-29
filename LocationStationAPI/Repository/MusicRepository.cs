@@ -59,7 +59,7 @@ namespace LocationStationAPI.Repository
         public IList<MusicItem> GetNearbyMusicItems(float latitude, float longitude)
         {
             var unfilteredList = GetMusicItems();
-            var searchRadius = 0.1;
+            var searchRadius = 0.001;
             IList<MusicItem> filteredList = new List<MusicItem>();
             while (filteredList.Count == 0) { 
             filteredList = unfilteredList
@@ -67,7 +67,7 @@ namespace LocationStationAPI.Repository
                             x.Latitude < (latitude + searchRadius) &&
                             x.Longitude > (longitude- searchRadius) &&
                             x.Longitude < (longitude + searchRadius)).ToList();
-                searchRadius += 0.1;
+                searchRadius += 0.001;
             }
             return filteredList;
         }
