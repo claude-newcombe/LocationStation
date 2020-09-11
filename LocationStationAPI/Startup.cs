@@ -18,9 +18,11 @@ namespace LocationStationAPI
 {
     public class Startup
     {
+        private string _contentRootPath = "";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            _contentRootPath = configuration.GetValue<string>(WebHostDefaults.ContentRootKey);
         }
 
         public IConfiguration Configuration { get; }
@@ -28,9 +30,14 @@ namespace LocationStationAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string conn = Configuration.GetConnectionString("Default");
+            if (conn.Contains("%CONTENTROOTPATH%"))
+            {
+                conn = conn.Replace("%CONTENTROOTPATH%", _contentRootPath);
+            }
             services.AddDbContext<LocationStationContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Default"));
+                options.UseSqlServer(conn);
             });
 
             services.AddControllers();
